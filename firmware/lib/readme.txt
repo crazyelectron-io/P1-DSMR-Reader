@@ -1,6 +1,4 @@
-# Dutch Smart Meter P1 interface with PoE
-
-## Protocol and software
+# README.md for P1 DSMR interface programme
 
 This is a continuously running program (on an ESP8266) for interfacing with a Dutch smart meter, through their P1 port, and publish the data via MQTT.
 The telegrams received on the P1 port are parsed and the relevant usage data is sent as a MQTT message where others can subscribe to (in particular OpenHAB 2).
@@ -103,8 +101,21 @@ All power readings are specified in Wh, gas reading is 1/1000 m3.
 
 The advantage of using a nested JSON structure like above is that we can add elements without affecting existing logic to extract values.
 
-The default MQTT packet size of the used Arduino PubSubClient library is too small for the messages we are sending. Increase it to 512 in the PubSubClient.h file. Be aware that adding a '#define MQTT_MAX_PACKET_SIZE' it to this source file before the include doesn't work because of the order the library headers are processed during pre-compile!
+The default MQTT packet size of the used Arduino PubSubClient library is too small for the messages we are sending.
+Increase it to 512 in the PubSubClient.h file.
+Be aware that adding a '#define MQTT_MAX_PACKET_SIZE' it to this source file before the include doesn't work because of the order the library headers are processed during pre-compile!
 See also: https://github.com/knolleary/pubsubclient/issues/431.
 
+**VERSION HISTORY:**
+  v0.1    Initial test version using HTTP calls to a webservice.
+  v0.2    Send MQTT messages in stead of making HTTP calls to a webservice.
+  v0.3    Expanded MQTT message to JSON structure.
+  v0.4    Adapted to recompiled Arduino PubSubClient library for larger packet size (up to 256).
+  v0.5    Added extra fields to MQTT message, cleanup of the code and some extra comments.
+  v0.6    Extended StaticJsonBuffer to fix overflow issue resulting in last value not being sent.
+
 **COPYRIGHT:**
-This program comes with ABSOLUTELY NO WARRANTY. Use at your own risk. This is free software, and you are welcome to redistribute it under certain conditions. The program and its source code are published under the GNU General Public License (GPL).  See http://www.gnu.org/licenses/gpl-3.0.txt for details. Some parts are based on other open source code.
+This program comes with ABSOLUTELY NO WARRANTY.
+Use at your own risk. This is free software, and you are welcome to redistribute it under certain conditions.
+The program and its source code are published under the GNU General Public License (GPL).
+See http://www.gnu.org/licenses/gpl-3.0.txt for details. Some parts are based on other open source code.

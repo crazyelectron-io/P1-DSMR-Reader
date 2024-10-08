@@ -1,2 +1,0 @@
-// Author: #{author}
-// Title:  #{title}
