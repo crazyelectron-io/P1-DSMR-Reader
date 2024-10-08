@@ -1780,7 +1780,7 @@
 			)
 		)
 		(instances
-			(project "KDT_Hierarchical"
+			(project "MCU_Template"
 				(path "/0650c7a8-acba-429c-9f8e-eec0baf0bc1c"
 					(page "6")
 				)
@@ -1821,7 +1821,7 @@
 			)
 		)
 		(instances
-			(project "KDT_Hierarchical"
+			(project "MCU_Template"
 				(path "/0650c7a8-acba-429c-9f8e-eec0baf0bc1c"
 					(page "2")
 				)
@@ -1862,7 +1862,7 @@
 			)
 		)
 		(instances
-			(project "KDT_Hierarchical"
+			(project "MCU_Template"
 				(path "/0650c7a8-acba-429c-9f8e-eec0baf0bc1c"
 					(page "7")
 				)
@@ -1903,7 +1903,7 @@
 			)
 		)
 		(instances
-			(project "KDT_Hierarchical"
+			(project "MCU_Template"
 				(path "/0650c7a8-acba-429c-9f8e-eec0baf0bc1c"
 					(page "3")
 				)
